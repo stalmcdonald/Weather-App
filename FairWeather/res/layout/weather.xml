@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" 
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" 
+	android:weightSum="1">
+    
+    <!-- Zip -->
+    <TextView android:text="Zip:" android:id="@+id/textView0"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:textColor="#FE7A15"></TextView>
+    
+	<EditText android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		android:id="@+id/etZip">
+		<requestFocus></requestFocus>
+	</EditText>
+    
+	<!-- City -->
+	<TextView android:text="City:" android:id="@+id/textView1"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:textColor="#FE7A15"></TextView>
+	
+	<EditText android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		android:id="@+id/etCity">
+		<!-- <requestFocus></requestFocus> -->
+	</EditText>
+	
+	<!-- State -->
+	<TextView android:text="State:" 
+	    android:id="@+id/textView2"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:textColor="#FE7A15"></TextView>
+	
+	<EditText android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:id="@+id/etState"></EditText>
+	
+	<!-- Button to get weather -->
+	<Button android:id="@+id/bWeather" 
+		android:layout_height="wrap_content" 
+		android:layout_width="match_parent"
+	    android:background="#FF9900"
+        android:text="Get Forecast"
+        android:textColor="#FFF">
+	</Button>
+	
+	<!-- Current Weather -->
+	<TextView android:text="Current Weather" 
+	    android:id="@+id/tvWeather"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:textColor="#005DAB">
+	</TextView>
+
+</LinearLayout>
