@@ -1,3 +1,8 @@
+/*
+ * Crystal McDonald
+ * Java 1 1302
+ * Week 3
+ */
 package com.cmcdonald.lib;
 
 import java.io.BufferedInputStream;
