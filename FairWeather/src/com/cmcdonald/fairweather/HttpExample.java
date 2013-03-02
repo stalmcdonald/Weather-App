@@ -1,8 +1,3 @@
-/*
- * Crystal McDonald
- * Java 1 1302
- * Week 4
- */
 package com.cmcdonald.fairweather;
 
 import java.io.IOException;

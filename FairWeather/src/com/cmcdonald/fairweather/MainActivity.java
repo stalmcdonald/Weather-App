@@ -1,8 +1,3 @@
-/*
- * Crystal McDonald
- * Java 1302
- * Week 4
- */
 package com.cmcdonald.fairweather;
 
 
@@ -14,6 +9,7 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
+
 
 import com.cmcdonald.lib.FileStuff;
 import com.cmcdonald.lib.WebStuff;
@@ -53,6 +49,7 @@ public class MainActivity extends Activity implements OnClickListener {
   
    }
 
+   // get text from edit view and set to string in textview
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		String c = city.getText().toString();
@@ -77,7 +74,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			//dummy data error catch
 		}catch (Exception e){
 			tv.setText("The weather is absolutely Perfect! Relax and enjoy life." + "\r\n" +  "\r\n" +
-						"Forecast:    " + "60 degrees" + "\r\n"	+
+						"Forecast:   " + "60 degrees" + "\r\n"	+
 						"Zip:    " + z + "\r\n"	+
 						"City:   " + c + "\r\n"+
 						"State:   " + s + "\r\n"	
