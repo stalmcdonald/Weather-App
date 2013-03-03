@@ -1,3 +1,9 @@
+/*
+ * Crystal McDonald
+ * Java 1 1302
+ * Week 4
+ * used tutorial www.mybringback.com Android Series
+ */
 package com.cmcdonald.fairweather;
 
 

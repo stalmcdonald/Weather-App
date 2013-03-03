@@ -6,7 +6,40 @@
 	android:layout_height="match_parent" 
 	android:weightSum="1">
     
-    <!-- Zip -->
+    <!-- Saving fave location -->
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Favorite State"
+        android:textColor="#FE7A15" />
+
+    <EditText
+        android:id="@+id/zipText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your ZIP"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/locText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Favorite State"
+        android:ems="10" 
+        />
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF9900"
+        android:textColor="#FFF"
+        android:text="Save" />
+    
+	<!-- Getting forecast info -->
     <TextView android:text="Zip:" android:id="@+id/textView0"
 		android:textAppearance="?android:attr/textAppearanceLarge"
 		android:layout_width="wrap_content" 
@@ -61,5 +94,7 @@
 		android:layout_height="wrap_content"
 		android:textColor="#005DAB">
 	</TextView>
+	
+
 
 </LinearLayout>
