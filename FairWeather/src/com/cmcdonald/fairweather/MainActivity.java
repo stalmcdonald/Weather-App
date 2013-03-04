@@ -7,6 +7,7 @@
 package com.cmcdonald.fairweather;
 
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -33,11 +34,26 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 	
-	static final String baseURL ="http://query.yahooapis.com/v1/public/yql?q=%20SELECT%20*%20FROM%20weather.forecast%20WHERE%20location%3D"; 
-			//"http://www.google.com/ig/api?weather=";
+	static final String baseURL = "http://query.yahooapis.com/v1/public/yql?q=%20SELECT%20*%20FROM%20weather.forecast%20WHERE%20location%3D"; 
+	//static final String baseURL="http://www.google.com/ig/api?weather=";
+	URL finalURL;{
+	try{
+		finalURL = new URL(baseURL);
+		Log.i("my url:", baseURL);
+		TempRequest tr = new TempRequest();
+		tr.execute(finalURL);
+		
+	} catch (MalformedURLException e){
+		Log.e("BAD URL", "MALFORMED URL");
+		finalURL = null;
+	}
+	}	
 	 TextView tv;
-	 
 	 EditText city, state, zip;
+	 Boolean _connected = false;
+
+		
+
 	
    /** Called when the activity is first created. */
    @Override
@@ -57,14 +73,16 @@ public class MainActivity extends Activity implements OnClickListener {
 
    // get text from edit view and set to string in textview
 	public void onClick(View v) {
+ 		
 		// TODO Auto-generated method stub
 		String c = city.getText().toString();
 		String s = state.getText().toString();
 		String z = zip.getText().toString();
 		
 		StringBuilder URL = new StringBuilder(baseURL);
-		URL.append(c + "," + s );
-		URL.append('"'+ z +'"');
+		//URL.append(c + "," + s );
+//		URL.append(z +"%22&format=json&callback");
+		URL.append('"' + z +'"' );
 		String fullUrl = URL.toString();
 		try{
 			URL website = new URL(fullUrl);
@@ -72,24 +90,29 @@ public class MainActivity extends Activity implements OnClickListener {
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 			SAXParser sp = spf.newSAXParser();
 			XMLReader xr = sp.getXMLReader();
-			HandlingXMLStuff doingWork = new HandlingXMLStuff();
-			xr.setContentHandler(doingWork);
+			HandlingXMLStuff getInfo = new HandlingXMLStuff();
+			xr.setContentHandler(getInfo);
 			xr.parse(new InputSource(website.openStream()));
-			String information = doingWork.getInformation();
+			String information = getInfo.getInformation();
 			tv.setText(information);
 			//dummy data error catch
 		}catch (Exception e){
 			tv.setText("The weather is absolutely Perfect! Relax and enjoy life." + "\r\n" +  "\r\n" +
-						"Forecast:   " + "60 degrees" + "\r\n"	+
+						"Forecast:   "+ "60¼f" +"\r\n"	+
 						"Zip:    " + z + "\r\n"	+
 						"City:   " + c + "\r\n"+
 						"State:   " + s + "\r\n"	
 						
+						
 			);
-			
 		}
-		
+//		 //Detects the network connection
+// 		_connected = WebStuff.getConnectionStatus(tv);
+// 		if(_connected){
+// 			Log.i("NETWORK CONNECTION ", WebStuff.getConnnectionType(tv));
+// 		}
 	}
+	
 	//create method to get history from Hard drive
     @SuppressWarnings("unchecked")
 	private HashMap<String, String> getHistory(){
@@ -117,7 +140,7 @@ public class MainActivity extends Activity implements OnClickListener {
     		}
     		return response;
     	}
+		
     }
-    
-    }
+}
 

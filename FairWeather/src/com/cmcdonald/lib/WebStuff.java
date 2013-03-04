@@ -13,6 +13,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
+import android.widget.TextView;
 
 //build functionality to connect to a website and pull data back and text for internet connection
 public class WebStuff {
@@ -78,5 +79,16 @@ public class WebStuff {
 			
 		
 		return response;
+	}
+
+	public static String getConnnectionType(TextView tv) {
+		
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static Boolean getConnectionStatus(TextView tv) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
